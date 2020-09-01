@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cycle_color">#33FFFFFF</color>
+    <color name="red_point_color">#EA3447</color>
+
+    <color name="background_color">#191919</color>
+</resources>

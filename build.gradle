@@ -1,0 +1,48 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.1"
+
+    defaultConfig {
+        minSdkVersion 22
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+//    //下面这个是用来将这个library编译成aar的
+//    task makeJar(type: Copy) {
+//        //删除存在的
+//        delete 'build/outputs/aar/plugin-release.aar'
+//        delete 'libs/'
+//        //设置拷贝的文件来源
+//        from('build/outputs/aar/')
+//        ////新生成的jar包的目录
+//        into('libs/')
+//        //将新生成的jar包classes.jar(新生成的jar文件名默认为classes.jar)放入上面的目录下目录下
+//        include('plugin-release.aar')
+//        ////重命名成我们设定的名字
+//        rename ('plugin-release.aar', 'IconView.aar')
+//    }
+//    makeJar.dependsOn(build)
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+}
