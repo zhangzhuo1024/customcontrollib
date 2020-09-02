@@ -161,7 +161,7 @@ public class IconView extends View {
         TransAnimator redPointValue = new TransAnimator(mRedPointWidth, mRedPointWidth / 2, 0f);
         TransAnimator redSquareValue = new TransAnimator(mRedSquareWidth, mRedSquareRadius, mMoveDistance);
         ValueAnimator valueAnimator = ObjectAnimator.ofObject(new TransTypeEvaluator(), redPointValue, redSquareValue);
-        valueAnimator.setDuration(5000);
+        valueAnimator.setDuration(500);
         valueAnimator.setInterpolator(new PathInterpolator(0.3f, 0f, 0, 1));
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -176,7 +176,7 @@ public class IconView extends View {
         });
         mCyclePaint.setColor(mCycleColor);
         ValueAnimator cycleAlphaAnimator = ObjectAnimator.ofFloat(1.0f, 0);
-        cycleAlphaAnimator.setDuration(1800);
+        cycleAlphaAnimator.setDuration(180);
         cycleAlphaAnimator.setInterpolator(new PathInterpolator(0.33f, 0, 0.67f, 1));
         final int cycleAlpha = mCyclePaint.getAlpha();
         cycleAlphaAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -199,7 +199,7 @@ public class IconView extends View {
         } else {
             valueAnimator = ObjectAnimator.ofObject(new TransTypeEvaluator(), redSquareValue, redPointValue);
         }
-        valueAnimator.setDuration(5000);
+        valueAnimator.setDuration(500);
         valueAnimator.setInterpolator(new PathInterpolator(0.3f, 0f, 0, 1));
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
