@@ -237,5 +237,4 @@ public class IconView extends View {
             return transAnimator;
         }
     }
-
 }
