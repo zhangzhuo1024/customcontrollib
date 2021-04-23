@@ -1,0 +1,29 @@
+
+@startuml
+
+
+View <|--IconView
+IconView : mRedPointColor:String
+IconView : mPaint:Paint
+IconView : init(AttributeSet attrs)
+IconView : startToMove()
+IconView : ringChangeToRect(boolean isRingToRect)
+
+IconView -- Paint
+
+IconView -- RectF
+
+
+
+
+
+
+Class01 <|-- Class02
+Class03 *-- Class04
+Class05 o-- Class06
+Class07 .. Class08
+Class09 -- Class10
+
+@enduml
+
+@enduml

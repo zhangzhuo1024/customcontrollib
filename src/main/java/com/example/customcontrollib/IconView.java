@@ -59,21 +59,23 @@ public class IconView extends View {
     }
 
     private void init(AttributeSet attrs) {
-        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.IconView);
-        mCycleTroke = typedArray.getDimension(R.styleable.IconView_cycle_troke, getContext().getResources().getDimensionPixelSize(R.dimen.cycle_troke));
-        mCycleWidth = typedArray.getDimension(R.styleable.IconView_cycle_width, getContext().getResources().getDimensionPixelSize(R.dimen.cycle_width));
-        mCycleCentreWidth = mCycleWidth - mCycleTroke;
-        mCycleColor = typedArray.getColor(R.styleable.IconView_cycle_color, getContext().getResources().getColor(R.color.cycle_color));
-        mHalfCycleTroke = mCycleTroke / 2;
+        if (attrs != null) {
+            TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.IconView);
+            mCycleTroke = typedArray.getDimension(R.styleable.IconView_cycle_troke, getContext().getResources().getDimensionPixelSize(R.dimen.cycle_troke));
+            mCycleWidth = typedArray.getDimension(R.styleable.IconView_cycle_width, getContext().getResources().getDimensionPixelSize(R.dimen.cycle_width));
+            mCycleCentreWidth = mCycleWidth - mCycleTroke;
+            mCycleColor = typedArray.getColor(R.styleable.IconView_cycle_color, getContext().getResources().getColor(R.color.cycle_color));
+            mHalfCycleTroke = mCycleTroke / 2;
 
-        mRedPointWidth = typedArray.getDimension(R.styleable.IconView_red_point_width, getContext().getResources().getDimensionPixelSize(R.dimen.red_point_width));
-        mRedPointColor = typedArray.getColor(R.styleable.IconView_red_point_color, getContext().getResources().getColor(R.color.red_point_color));
+            mRedPointWidth = typedArray.getDimension(R.styleable.IconView_red_point_width, getContext().getResources().getDimensionPixelSize(R.dimen.red_point_width));
+            mRedPointColor = typedArray.getColor(R.styleable.IconView_red_point_color, getContext().getResources().getColor(R.color.red_point_color));
 
-        mRedSquareWidth = typedArray.getDimension(R.styleable.IconView_square_width, getContext().getResources().getDimensionPixelSize(R.dimen.square_width));
-        mRedSquareRadius = typedArray.getDimension(R.styleable.IconView_square_radius, getContext().getResources().getDimensionPixelSize(R.dimen.square_radius));
+            mRedSquareWidth = typedArray.getDimension(R.styleable.IconView_square_width, getContext().getResources().getDimensionPixelSize(R.dimen.square_width));
+            mRedSquareRadius = typedArray.getDimension(R.styleable.IconView_square_radius, getContext().getResources().getDimensionPixelSize(R.dimen.square_radius));
 
-        mMoveDistance = typedArray.getDimension(R.styleable.IconView_move_distance, getContext().getResources().getDimensionPixelSize(R.dimen.move_distance));
-
+            mMoveDistance = typedArray.getDimension(R.styleable.IconView_move_distance, getContext().getResources().getDimensionPixelSize(R.dimen.move_distance));
+            typedArray.recycle();
+        }
         mCyclePaint = new Paint();
         mCyclePaint.setAntiAlias(true);
         mCyclePaint.setStyle(Paint.Style.STROKE);
@@ -237,5 +239,4 @@ public class IconView extends View {
             return transAnimator;
         }
     }
-
 }

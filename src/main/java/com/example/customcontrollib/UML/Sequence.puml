@@ -1,0 +1,7 @@
+@startuml
+User -> IconView: init
+User --> IconView: setOnclickListener
+
+IconView -> User: onClick
+
+@enduml
